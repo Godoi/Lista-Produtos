@@ -1,0 +1,241 @@
+@import '_variables';
+.view {
+  padding: 0;
+  width: 100%;
+}
+@media (min-width: 992px) {
+  .view { padding: 0 40px 40px;}
+}
+.view__header {
+  align-items: center;
+  display: flex;
+  height: 122px;
+  width: 100%;
+}
+.view__buttons {
+  flex-grow: 2;
+  font-size: 0;
+  text-align: right;
+}
+.view__buttons--ellipsis::after {
+  content: none;
+  width: 0;
+}
+.view__button {
+  cursor: pointer;
+  margin-left: 20px;
+}
+.view__title {
+  color: #8a9199;
+  flex-grow: 1;
+  font-size: 1.42rem;
+  font-weight: 700;
+}
+.view__subtitle {
+  @extend .view__title;
+  font-size: 1.2857rem;
+}
+.view__title-section {
+  @extend .view__subtitle;
+  font-weight: 400;
+}
+.view__pagination { display: inline-block; }
+.view__label--required:after {
+  color: $dangerColor;
+  content: "\e904";
+  font-family: "icomoon";
+  font-size: .5rem;
+  margin-left: .25rem;
+  vertical-align: middle;
+}
+/* formulario filtro */
+.search {
+  position: relative;
+  z-index: 0;
+}
+.search__icon-box { background: #fff; }
+.search__control--filled {
+  border-right: none;
+}
+.search__icon-box--clickable:hover {
+  cursor: pointer;
+}
+.search__icon {
+  color: #8a9199;
+  font-size: 1rem;
+}
+.search__control {
+  border-left: none;
+  &:focus {
+    border-color: rgba(0, 0, 0, 0.15);
+  }
+}
+.search__count {
+  border-left: 1px solid darken($primaryColor, 10%);
+}
+
+/* botões estilo 'iniciar windows 8/10' */
+.btn-touch-group {
+  display: block;
+  height: 66px;
+}
+.btn-touch {
+  color: #8a9199;
+  display: inline-block;
+  height: 100%;
+  line-height: 100%;
+  padding: 0 20px;
+  position: relative;
+  width: 66px;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: #e0e0e0;
+    cursor: pointer;
+    .btn-touch__icon {
+      color: #fff;
+    }
+    &.btn-touch--primary { background-color: $primaryColor; }
+    &.btn-touch--warning { background-color: $warningColor; }
+    &.btn-touch--danger { background-color: $dangerColor; }
+  }
+}
+.btn-touch__icon {
+  color: inherit;
+  left: 50%;
+  margin: -7px 0 0 -7px;
+  position: absolute;
+  top: 50%;
+}
+.dropdown--filters {
+  display: inline-block;
+  position: static;
+}
+.list-totalizer {
+  padding-top: .822rem;
+  text-align: right;
+}
+.list-totalizer__count,
+.list-totalizer__label {
+  display: inline-block;
+  font-weight: 700;
+  vertical-align: middle;
+}
+.list-totalizer__label {
+  color: #8a9199;
+  text-align: right;
+}
+.list-totalizer__count {
+  color: #15b35a;
+}
+/** table-list */
+.table-list {
+  margin-top: 25px;
+  &__actions { width: 198px; }
+  &--bold { font-weight: 700;}
+  &--disabled {
+    color: #a1aab3;
+    font-weight: 400;
+  }
+  &__item:hover {
+    background-color: #edf4fa;
+  }
+  &__resume-link {
+    color: #0080ff !important;
+    cursor: pointer;
+    margin-right: 1rem;
+    text-decoration: none;
+  }
+  &__loading-box {
+    text-align: center;
+  }
+}
+
+.loader-box {
+  margin-top: 10rem;
+  text-align: center;
+  width: 100%;
+}
+.loader {
+  display: inline-block;
+  height: 25px;
+  position: relative;
+  width:40px;
+  &__middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+    height: 25px;
+    width: 10px;
+    border-radius: 10%;
+    background: $backgroundColor;
+    border-top-color: $brandColor;
+    animation: fade2 1s infinite;
+    transition: background .2s;
+    z-index: 10;
+    &:after,
+    &:before {
+      content: '';
+      position: absolute;
+      display: block;
+      height: 20px;
+      width: 10px;
+      background: $backgroundColor;
+      top: 50%;
+      transform: translateY(-50%);
+      left: -15px;
+      border-radius: 10%;
+      animation: fade1 1s infinite;
+      transition: background .2s;
+    }
+    &:before {
+      left: 15px;
+      animation: fade3 1s infinite;
+    }
+  }
+}
+
+@keyframes fade1 {
+  0% {
+    background: $brandColor;
+  }
+}
+
+@keyframes fade2 {
+  33% {
+    background: $brandColor;
+  }
+}
+
+@keyframes fade3 {
+  66% {
+    background: $brandColor;
+  }
+}
+.sortable {
+  cursor: pointer;
+  &::after {
+    content: "\e918";
+    font-family: 'icomoon';
+    font-size: 12px;
+    display: inline-block;
+    margin-left: 5px;
+    position: relative;
+    vertical-align: middle;
+  }
+  &--asc::after {
+    content: '\e903';
+    font-size: 8px;
+    transform: none;
+    top: -3px;
+  }
+  &--desc::after {
+    bottom: -3px;
+    content: '\e900';
+    font-size: 8px;
+    transform: none;
+  }
+}
+

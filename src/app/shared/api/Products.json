@@ -1,0 +1,83 @@
+[
+	{
+		"desconto": "30%",
+		"produto": "BODY CAVADO GOLA JR GIRL",
+		"preco": "R$ 140,00",
+		"valor_desc": "R$ 98,00",
+        "descricao": "This is a wider card with supporting text below as a natural lead-in to additional content.",
+        "imagem": "https://www.jrgirl.com.br/application/uploads/2017/01/17161-BRANCO-3-370x493.jpg",
+		"categoria":"body"
+	},
+    {
+		"desconto": "30%",
+		"produto": "CALÇA FLARE CINTURA MUITO ALTA DIMY",
+		"preco": "R$ 140,00",
+		"valor_desc": "R$ 98,00",
+        "descricao": "This is a wider card with supporting text below as a natural lead-in to additional content.",
+        "imagem": "https://www.jrgirl.com.br/application/uploads/2016/12/CAL07475-AREIA-1-370x493.jpg",
+		"categoria": "calca"
+	},
+	{
+		"desconto": "30%",
+		"produto": "VESTIDO SLEEP DRESS ORIENTAL GATABAKANA",
+		"preco": "R$ 140,00",
+		"valor_desc": "R$ 98,00",
+        "descricao": "This is a wider card with supporting text below as a natural lead-in to additional content.",
+        "imagem": "https://www.jrgirl.com.br/application/uploads/2017/05/GATABAKANA-14409-PRETO-4-370x493.jpg",
+		"categoria":"vestido"
+	},
+    {
+		"desconto": "",
+		"produto": " CROPPED LIBERTY BLACK JOHN JOHN",
+		"preco": "R$ 140,00",
+		"valor_desc": "",
+        "descricao": "This is a wider card with supporting text below as a natural lead-in to additional content.",
+        "imagem": "https://www.jrgirl.com.br/application/uploads/2017/05/JOHN-JOHN-0302136709-PRETO-4-370x493.jpg",
+		"categoria": "cropped"
+	},
+    {
+		"desconto": "",
+		"produto": "CROPPED GOLA JR GIRL",
+		"preco": "R$ 140,00",
+		"valor_desc": "",
+        "descricao": "This is a wider card with supporting text below as a natural lead-in to additional content.",
+        "imagem": "https://www.jrgirl.com.br/application/uploads/2017/06/JR-GIRL-2912-MARSALA-1-370x493.jpg",
+		"categoria": "cropped"
+	},
+    {
+		"desconto": "",
+		"produto": "BATA AMARRAÇÃO GATABAKANA",
+		"preco": "R$ 140,00",
+		"valor_desc": "",
+        "descricao": "This is a wider card with supporting text below as a natural lead-in to additional content.",
+        "imagem": "https://www.jrgirl.com.br/application/uploads/2017/05/GATABAKANA-14038-M-GUEIXA-1-370x493.jpg",
+		"categoria": "bata"
+	},
+    {
+		"desconto": "",
+		"produto": "VESTIDO STREET GATABAKANA",
+		"preco": "R$ 140,00",
+		"valor_desc": "",
+        "descricao": "This is a wider card with supporting text below as a natural lead-in to additional content.",
+        "imagem": "https://www.jrgirl.com.br/application/uploads/2017/05/GATABAKANA-14440-PRETO-3-280x460.jpg",
+		"categoria": "vestido"
+	},
+    {
+		"desconto": "",
+		"produto": "BLUSA AMPLA FENIX GATABAKANA",
+		"preco": "R$ 140,00",
+		"valor_desc": "",
+        "descricao": "This is a wider card with supporting text below as a natural lead-in to additional content.",
+        "imagem": "https://www.jrgirl.com.br/application/uploads/2017/06/GATABAKANA-14025-FUJI-2-280x460.jpg",
+		"categoria": "blusa"
+	},
+    {
+		"desconto": "",
+		"produto": "BLUSÃO FRANJAS GATABAKANA",
+		"preco": "R$ 140,00",
+		"valor_desc": "",
+        "descricao": "This is a wider card with supporting text below as a natural lead-in to additional content.",
+        "imagem": "https://www.jrgirl.com.br/application/uploads/2017/06/GATABAKANA-14194-OFF-BLACK-1-280x460.jpg",
+		"categoria": "blusa"
+	}
+]

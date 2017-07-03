@@ -1,0 +1,18 @@
+@import "src/assets/styles/_variables";
+.site-footer {
+    background-color: $backgroundFooter;
+}
+.footer-container {
+    background-image: url(../assets/images/footer_bg.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: scroll;
+    background-size: contain;
+    height: 200px;
+    .container {
+        max-width: 41rem;
+        text-align: center;     
+        color:$colorDefault;
+        h1{ padding-top: 18%;}
+    }
+}

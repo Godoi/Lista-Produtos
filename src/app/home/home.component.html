@@ -1,0 +1,61 @@
+<cp-navbar id="header" (outTerm)="search($event)"> </cp-navbar> 
+
+    <section class="jumbotron back-header text-center">
+      <div class="container">
+        <h1 class="jumbotron-heading"> Fashion & Style </h1>
+        <p class="lead text-muted">
+          Fashion tips always come better from a professional point of view. 
+          I’ve worked at multiple nationwide women’s magazines, so I will do my best 
+          to be a perfect guide for you in this world of lifestyle, fashion and beauty!
+        </p>       
+      </div>
+    </section>
+
+    <div id="galeria" class="album text-muted">
+      <div class="container">
+
+        <div class="row">           
+          <div class="card wrapper-hover" *ngFor="let item of itens">
+            <img src="{{item.imagem}}" alt="{{item.produto}}">            
+            <div class="label-product">
+              <span class="sale" [class.none]="item.desconto === ''">{{item.desconto}}</span>
+            </div>
+            <div class="product-info">
+              <p class="product-name">
+                <a href="javascript" title="{{item.produto}}">
+                 {{item.produto}}
+                </a>
+              </p>
+              <div class="price-box">
+                <p class="special-price">  
+                  <span class="price"  [class.none]="item.desconto === ''">
+                    {{item.valor_desc}}                                
+                   </span>
+                   <span class="price"  [class.none]="item.desconto !== ''">
+                    {{item.preco}}                                
+                   </span>
+                </p>
+                <p class="old-price">                
+                  <span class="price" [class.none]="item.valor_desc === ''">
+                    {{item.preco}}          
+                  </span>
+                </p>    
+              </div>
+              <div class="wrapper-hover-hiden">			
+                  <div class="actions">                    
+                    <a href="javascript:void(0)" class="hvr-bounce-to-right">Details</a>
+                  </div>
+							</div>
+            </div>
+            <p class="card-text">{{item.descricao}} </p>     
+          </div>
+          
+        </div>
+
+      </div>
+    </div>
+
+<a (click)="goToScroll('#header')" id="toTop" class="toTop fa fa-angle-up">
+  Topo
+</a>
+

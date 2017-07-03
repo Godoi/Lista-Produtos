@@ -1,0 +1,10 @@
+@import "src/assets/styles/_variables";
+.text-about{color: $colorDefault;}
+.navbar-inverse{
+    .navbar-brand,.navbar-toggler{
+        color: $colorDefault;
+    }
+}
+.bg-inverse {
+    background-color: $backgroundNav !important;
+}
