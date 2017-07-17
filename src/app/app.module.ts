@@ -2,13 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import {Ng2PageScrollModule} from 'ng2-page-scroll';
+import { Ng2PageScrollModule } from 'ng2-page-scroll';
 import { WindowRef } from './shared/WindowRef';
 import { SessionStorageRef } from './shared/SessionStorageRef';
-
-import { AuthModule } from './auth.module';
-import { AuthService } from './auth.service';
-import { AuthGuard } from './auth-guard.service';
 
 /** App root imports */
 import { AppRoutingModule } from './app-routing.module';
@@ -20,7 +16,7 @@ import { PageNotFoundComponent } from './page-not-found';
 /** Feature Areas imports */
 import { HomeModule } from './home/home.module';
 //import { NavbarModule } from './shared/navbar/navbar.module';
-import { FooterModule } from './shared/footer/footer.module';
+//import { FooterModule } from './shared/footer/footer.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +24,6 @@ import { FooterModule } from './shared/footer/footer.module';
     PageNotFoundComponent
   ],
   imports: [
-    AuthModule,
     BrowserModule,
     FormsModule,
     HttpModule,
@@ -36,14 +31,12 @@ import { FooterModule } from './shared/footer/footer.module';
     AppRoutingModule,
     Ng2PageScrollModule.forRoot(),
     //NavbarModule,
-    FooterModule,
+    //FooterModule,
     HomeModule
   ],
   providers: [
     SessionStorageRef,
-    WindowRef,
-    AuthGuard,
-    AuthService
+    WindowRef
   ],
   bootstrap: [AppComponent]
 })

@@ -3,19 +3,20 @@ import {
   HostBinding,
   OnInit,
   OnDestroy,
+  Input,
   Inject
- } from '@angular/core';
- 
-import { ActivatedRoute, Router } from '@angular/router';
-
+ } from '@angular/core'; 
+import { 
+  ActivatedRoute, 
+  Router } from '@angular/router';
 import {DOCUMENT} from '@angular/platform-browser';
-import {PageScrollInstance, PageScrollService, EasingLogic} from 'ng2-page-scroll';
-
+import {
+  PageScrollInstance, 
+  PageScrollService, 
+  EasingLogic} from 'ng2-page-scroll';
 import { Subscription } from 'rxjs/Subscription';
-import { SessionStorageRef } from '../shared/SessionStorageRef';
-import { AuthService } from '../auth.service';
 import { HomeService } from './home.service';
-
+import { ApiUrl } from '../shared/constants';
 import { FooterComponent } from '../shared/footer/footer.component';
 
 @Component({
@@ -23,22 +24,23 @@ import { FooterComponent } from '../shared/footer/footer.component';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit,OnDestroy {
+  title:string = "Lançamentos";
   itens: any[] = [];
+  carousel: any[] = [];
   sessionStorage: any;  
   subscriptions: Subscription[] = [];
+  url = `${ ApiUrl }`;
+  col:number = 3;
+
   constructor(
     @Inject(DOCUMENT) private document: any,
     private pageScrollService: PageScrollService,
-    private authService: AuthService,
-    private ss: SessionStorageRef,
     protected route: ActivatedRoute,    
     private service: HomeService
-  ) {
-    this.listProdutcs();    
+  ) {    
+    this.listReleases();
   }
-  ngOnInit() {
-    this.authService.isToken();
-  }
+  ngOnInit() { }
   ngOnDestroy() {
     this.subscriptions.forEach(s => s.unsubscribe());
   }
@@ -46,14 +48,21 @@ export class HomeComponent implements OnInit,OnDestroy {
     let pageScrollInstance: PageScrollInstance = PageScrollInstance.simpleInstance(this.document, `${ scroll }`);
     this.pageScrollService.start(pageScrollInstance);
   }
-  listProdutcs(){
-    this.subscriptions.push(
-      this.route.data
-        .subscribe(data => {
-          this.itens = data['fetchData']['itens'];
-          this.goToScroll('#galeria');
-        })
-    );
+  listReleases(){
+    this.route.data
+        .subscribe(data => {          
+          for(var i=0; i<data['fetchData']['itens'].length/this.col; i++){
+            this.carousel.push(data['fetchData']['itens'].slice(i*this.col,(i*this.col)+this.col));
+          } 
+          this.itens = this.carousel; 
+    });
+  }
+  listProdutcs(){   
+    this.route.data
+      .subscribe(data => {
+        this.itens = data['fetchData']['itens'];
+        this.goToScroll('#galeria');           
+      });   
   }
   search(term){      
     this.listProdutcs();  

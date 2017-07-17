@@ -1,0 +1,44 @@
+@import "src/assets/styles/_variables";
+#carouselIndicators{
+    .carousel-caption{
+        color: black;
+        text-align: left;
+        right: 22%;
+        font-size: 20px;
+        h2{ 
+            font-size: 100px; 
+            font-weight: 700;
+            letter-spacing: .025em;
+            text-transform: uppercase;
+            margin: 0;
+            line-height: 1;
+        }
+        h3{ 
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: .025em;
+            text-transform: uppercase;
+            margin: 0;
+        }
+        p{ 
+            margin-top: 15px; font-weight: 300;            
+        }
+    }
+}
+.carousel-indicators{
+    li{ background-color: $colorPrimary; }
+    .active{ background-color: $colorSecondary; }
+}
+.carousel-inner{
+    img {
+        display: block;
+        position: relative;
+        z-index: 1;
+        height: 546px;
+        border: 0;
+        vertical-align: middle;
+    }
+}
+.carousel-gallery{
+    bottom: -38px!important;
+}

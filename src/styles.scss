@@ -1,13 +1,299 @@
-/* You can add global styles to this file, and also import other style files */
-
-html, body {
-  position: relative;
-}
+@import "src/assets/styles/_variables";
 body {
-    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #292b2c;
-    background-color: #fff;
+  min-height: 75rem; /* Can be removed; just added for demo purposes */
+  overflow-x: hidden;
 }
+.none{display: none!important;}
+.text-muted {
+    color:$colorBlack;
+}
+.img-carousel{
+    width: 100%;
+}
+.hvr-bounce-to-right{
+    background-color: $btnBg;
+    color:$colorDefault;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+.hvr-bounce-to-right:before{background-color: $btnHover;}
+.back-header {
+    background-color: $backgroundDefault;
+    background-image: url(/assets/images/header_bg.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: scroll;
+    background-size: contain;
+}
+
+.jumbotron {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  margin-bottom: 0;
+  background-color:$colorDefault;
+  .container {
+    max-width: 41rem;
+  }
+}
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron-heading {
+  font-weight: 300;
+}
+
+.album {
+  min-height: 50rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: $backgroundDefault;
+}
+
+.inline-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    .inline-list li {
+        display: inline-block;
+    }
+}
+
+.card {
+  float: left;
+  width: 31.333%;
+  margin:1%;
+  padding: .75rem;
+  margin-bottom: 2rem;
+  position: relative;
+  border: 0;
+  img{
+    width: 100%;
+    height: auto;
+  }
+  &.wrapper-hover {
+      background: #fff;
+      cursor: pointer;
+      -webkit-box-shadow: 0 0 1px #e6e6e6;
+      -moz-box-shadow: 0 0 1px #e6e6e6;
+      box-shadow: 0 0 1px #e6e6e6;
+      position: relative;     
+      -webkit-transition: all 0.1s ease-in-out 0.2s,margin 0.1s ease-in-out 0.1s,box-shadow 0.1s ease-in-out 0s;
+      -o-transition: all 0.1s ease-in-out 0.2s,margin 0.1s ease-in-out 0.1s,box-shadow 0.1s ease-in-out 0s;
+      transition: all 0.1s ease-in-out 0.2s,margin 0.1s ease-in-out 0.1s,box-shadow 0.1s ease-in-out 0s;
+  }
+  &:hover {
+      z-index: 9;
+      &.wrapper-hover {
+          -webkit-box-shadow: 0 0 21px #c2c2c2;
+          -moz-box-shadow: 0 0 21px #c2c2c2;
+          box-shadow: 0 0 21px #c2c2c2;
+          -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+          -webkit-transition: all 0.25s ease-in-out 0s,margin 0.25s ease-in-out 0.25s,box-shadow 0.25s ease-in-out 0.5s;
+          -o-transition: all 0.25s ease-in-out 0s,margin 0.25s ease-in-out 0.25s,box-shadow 0.25s ease-in-out 0.5s;
+          transition: all 0.25s ease-in-out 0s,margin 0.25s ease-in-out 0.25s,box-shadow 0.25s ease-in-out 0.5s;
+      }   
+      .product-info { 
+        .wrapper-hover-hiden {
+            top: 102%;
+            -webkit-box-shadow: 0 0 21px #c2c2c2;
+            -moz-box-shadow: 0 0 21px #c2c2c2;
+            box-shadow: 0 0 21px #c2c2c2;
+            max-height: 400px;
+            opacity: 1;
+            filter: alpha(opacity=100);
+            -webkit-transition: all 0.25s ease-in-out 0s,box-shadow 0.25s ease-in-out 0.5s;
+            -o-transition: all 0.25s ease-in-out 0s,box-shadow 0.25s ease-in-out 0.5s;
+            transition: all 0.25s ease-in-out 0s,box-shadow 0.25s ease-in-out 0.5s;
+
+            .actions {
+                opacity: 1;
+                filter: alpha(opacity=100);
+                -webkit-transition: all 0.25s ease-in-out 0.5s;
+                -o-transition: all 0.25s ease-in-out 0.5s;
+                transition: all 0.25s ease-in-out 0.5s;
+                visibility: visible;
+                max-height: 200px;
+            }
+        } 
+      }
+  }
+  .product-info {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-family: "Lato",sans-serif;
+    text-align: left;
+    .price-box {
+        color: #586077;
+        font-size: 14px;
+        margin: 0 0 5px;
+        text-align: left;
+        .special-price,.old-price {
+            display: inline-block;
+            margin: 0 5px 0 0;
+        }
+        .old-price{
+          .price {
+              color: #8b8b96;
+              text-decoration: line-through;
+              font-size: 13px;
+              font-weight: normal;
+          }
+        }
+        .price {
+            color: $colorGreen;
+            font-size: 16px;
+            font-weight: 600;
+        }
+    }
+    .product-name {
+        font-size: 15px;
+        font-weight: normal;
+        line-height: 1.26em;
+        margin-bottom:0;
+        text-align: left;
+        font-family: "Lato",sans-serif;
+        text-transform: uppercase;
+        a{
+            font-weight: 600;
+            color:$colorBlack;
+            &:hover {
+                color: $colorGreen;
+                text-decoration: none;
+            }
+        }
+    }
+    .wrapper-hover-hiden {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        background: #fff;
+        -webkit-box-shadow: 0 0 1px #e6e6e6;
+        -moz-box-shadow: 0 0 1px #e6e6e6;
+        box-shadow: 0 0 1px #e6e6e6;
+        padding: 0 25px 25px;
+        text-align: left;
+        max-height: 0;
+        opacity: 0;
+        filter: alpha(opacity=0);
+        -webkit-transition: all 0.1s ease-in-out 0.1s,box-shadow 0.1s ease-in-out 0s;
+        -o-transition: all 0.1s ease-in-out 0.1s,box-shadow 0.1s ease-in-out 0s;
+        transition: all 0.1s ease-in-out 0.1s,box-shadow 0.1s ease-in-out 0s;
+        .desc_grid {
+            max-width: 220px;
+            margin-bottom: 15px;
+        }
+        &:before, &:after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 21px;
+            top: -21px;
+            background: #fff;
+            left: 0;
+        }
+    }
+  }  
+  .label-product{
+    position: absolute;
+    top: 20px;
+    left: 0px;   
+    .sale{
+        background-color:$colorSale;
+        color:$colorDefault;
+        margin-left: .75rem;
+    }
+    span{
+      display: block;
+      padding: 10px 15px 10px 20px;
+      color: $colorDefault;
+      font-size: 14px;
+      line-height: 16px;
+      text-transform: uppercase;
+      font-weight: 500;
+      position: relative;
+      margin-bottom: 10px;
+      font-family: "Lato",sans-serif;    
+
+      &:before {
+          bottom: 0;
+          border-top: 18px solid transparent;
+          border-left: 10px solid $colorSale;
+          border-right: none;
+          content: "";
+          position: absolute;
+          right: -10px;
+      } 
+      &:after {
+          top: 0;
+          border-bottom: 18px solid transparent;
+          border-left: 10px solid $colorSale;
+          border-right: none;
+          content: "";
+          position: absolute;
+          right: -10px;
+      }
+    }    
+  }
+  .actions {
+    padding: 10px 0 5px;
+    bottom: 0px;
+    width: 100%;
+  }
+  .wrapper-hover-hiden {
+    .actions {
+        opacity: 0;
+        filter: alpha(opacity=0);
+        -webkit-transition: all 0.1s ease-in-out 0s;
+        -o-transition: all 0.1s ease-in-out 0s;
+        transition: all 0.1s ease-in-out 0s;
+        visibility: hidden;
+        max-height: 0;
+    }
+  }
+}
+
+.card > img {
+  margin-bottom: .75rem;
+}
+
+.card-text {
+  font-size: 85%;
+  color:$colorBlack;
+}
+
+#toTop {
+    display: inline-block;
+    position: fixed;
+    bottom: 7px;
+    right: 3% !important;
+    width: 45px;
+    height: 45px;
+    line-height: 43px;
+    text-align: center;
+    font-size: 14px;
+    color: $colorDefault;
+    background: $backgroundNav;
+    z-index: 9999;
+    text-decoration: none;
+    -moz-transition: all 0.4s ease 0s;
+    -webkit-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    -ms-transition: all 0.4s ease 0s;
+}
+#toTop:hover {
+    background: $btnBg;
+}
+.widget-title {
+    text-align: center;
+    margin-bottom: 45px;
+    font-weight: 300;
+    width: 100%;
+}
+.carousel-indicators{
+    li{ background-color: $colorPrimary; }
+    .active{ background-color: $colorSecondary; }
+}
+

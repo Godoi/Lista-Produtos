@@ -11,51 +11,16 @@
       </div>
     </section>
 
-    <div id="galeria" class="album text-muted">
-      <div class="container">
+    <cp-carousel-simple> </cp-carousel-simple>
 
-        <div class="row">           
-          <div class="card wrapper-hover" *ngFor="let item of itens">
-            <img src="{{item.imagem}}" alt="{{item.produto}}">            
-            <div class="label-product">
-              <span class="sale" [class.none]="item.desconto === ''">{{item.desconto}}</span>
-            </div>
-            <div class="product-info">
-              <p class="product-name">
-                <a href="javascript" title="{{item.produto}}">
-                 {{item.produto}}
-                </a>
-              </p>
-              <div class="price-box">
-                <p class="special-price">  
-                  <span class="price"  [class.none]="item.desconto === ''">
-                    {{item.valor_desc}}                                
-                   </span>
-                   <span class="price"  [class.none]="item.desconto !== ''">
-                    {{item.preco}}                                
-                   </span>
-                </p>
-                <p class="old-price">                
-                  <span class="price" [class.none]="item.valor_desc === ''">
-                    {{item.preco}}          
-                  </span>
-                </p>    
-              </div>
-              <div class="wrapper-hover-hiden">			
-                  <div class="actions">                    
-                    <a href="javascript:void(0)" class="hvr-bounce-to-right">Details</a>
-                  </div>
-							</div>
-            </div>
-            <p class="card-text">{{item.descricao}} </p>     
-          </div>
-          
-        </div>
+    <cp-banner-column> </cp-banner-column>
 
-      </div>
-    </div>
+    <cp-carousel-column [collection]="carousel" [title]="title" > </cp-carousel-column>
+
 
 <a (click)="goToScroll('#header')" id="toTop" class="toTop fa fa-angle-up">
   Topo
 </a>
+
+<cp-footer> </cp-footer>
 

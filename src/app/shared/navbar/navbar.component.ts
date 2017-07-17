@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Output, OnInit, Input, HostBinding } from '@angular/core';
-import { AuthService } from '../../auth.service';
 
 @Component({
   selector: 'cp-navbar',
@@ -10,7 +9,7 @@ export class NavbarComponent implements OnInit {
 
   @Output() outTerm = new EventEmitter();
 
-  constructor(private authService: AuthService) { }
+  constructor() { }
 
   ngOnInit() {}
 

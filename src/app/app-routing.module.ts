@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 
 /** View Components */
 import { PageNotFoundComponent } from './page-not-found';
-import { AuthGuard } from './auth-guard.service';
 
 const appRoutes: Routes = [
   {
